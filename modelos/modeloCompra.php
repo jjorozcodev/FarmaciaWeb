@@ -1,10 +1,10 @@
 <?php 
 
-//Defenicion de las clases
-class Compra
+//Definicion de las clases
+class compras
 {
     public idCompra;
-    public fecha;
+    public Fecha;
 
     //get
     public function getIdCompra()
@@ -14,17 +14,17 @@ class Compra
 
     public function getFecha()
     {
-        return $this->fecha;
+        return $this->Fecha;
     }
+    
     //set
-
     public function setIdCompra($value)
     {
         $this->idCompra = $value;
     }
     public function setFecha($value)
     {
-        $this->fecha = $value;
+        $this->Fecha = $value;
     }
 }
 ?>

@@ -1,11 +1,11 @@
 <?php 
 
-//Defenicion de las clases
-class Usuario
+//Definicion de las clases
+class usuarios
 {
     public idUsuario;
-    public usuario;
-    public contraseña;
+    public Usuario;
+    public Clave;
 
     //get
     public function getIdUsuario()
@@ -15,26 +15,26 @@ class Usuario
 
     public function getUsuario()
     {
-        return $this->usuario;
+        return $this->Usuario
     }
 
-    public function getContraseña()
+    public function getClave()
     {
-        return $this->contraseña;
+        return $this->clave;
     }
-    //set
 
+    //set
     public function setIdUsuario($value)
     {
         $this->idUsuario = $value;
     }
     public function setUsuario($value)
     {
-        $this->usuario = $value;
+        $this->Usuario = $value;
     }
-    public function setContraseña($value)
+    public function setClave($value)
     {
-        $this->contraseña = $value;
+        $this->clave = $value;
     }
 }
 ?>

@@ -1,37 +1,36 @@
 <?php 
 
-//Defenicion de las clases
-class Proveedor
+//Definicion de las clases
+class proveedores
 {
     public idProveedor;
-    public proveedor;
-    public telefono;
-    public direccion;
+    public Proveedor;
+    public Telefono;
+    public Direccion;
 
     //get
-    public function getIdproveedor()
+    public function getidProveedor()
     {
         return $this->idProveedor;
     }
 
     public function getProveedor()
     {
-        return $this->proveedor;
+        return $this->Proveedor;
     }
 
     public function getTelefono()
     {
-        return $this->telefono;
+        return $this->Telefono;
     }
 
     public function getDireccion()
     {
-        return $this->direccion;
+        return $this->Direccion;
     }
     
     //set
-
-    public function setIdproveedor($value)
+    public function setidProveedor($value)
     {
         $this->idProveedor = $value;
     }
@@ -41,11 +40,11 @@ class Proveedor
     }
     public function setTelefono($value)
     {
-        $this->telefono = $value;
+        $this->Telefono = $value;
     }
     public function setDireccion($value)
     {
-        $this->direccion = $value;
+        $this->Direccion = $value;
     }
 }
 ?>

@@ -1,12 +1,13 @@
 <?php 
-//Defenicion de las clases
-class Medicamento
+
+//Definicion de las clases
+class medicamentos
 {
     public idMedicamento;
-    public medicamento;
-    public presentacion;
-    public existencia;
-    public precio;
+    public Medicamento;
+    public Presentacion;
+    public Existencias;
+    public Precio;
 
     //get
     public function getIdMedicamento()
@@ -16,45 +17,44 @@ class Medicamento
 
     public function getMedicamento()
     {
-        return $this->medicamento;
+        return $this->Medicamento;
     }
 
     public function getPresentacion()
     {
-        return $this->presentacion;
+        return $this->Presentacion;
     }
 
-    public function getExistencia()
+    public function getExistencias()
     {
-        return $this->existencia;
+        return $this->Existencias;
     }
 
     public function getPrecio()
     {
-        return $this->precio;
+        return $this->Precio;
     }
     
     //set
-
     public function setIdMedicamento($value)
     {
         $this->idMedicamento = $value;
     }
     public function setMedicamento($value)
     {
-        $this->medicamento = $value;
+        $this->Medicamento = $value;
     }
     public function setPresentacion($value)
     {
-        $this->presentacion = $value;
+        $this->Presentacion = $value;
     }
-    public function setExistencia($value)
+    public function setExistencias($value)
     {
         $this->excistencia = $value;
     }
     public function setPrecio($value)
     {
-        $this->precio = $value;
+        $this->Precio = $value;
     }
 }
 ?>
