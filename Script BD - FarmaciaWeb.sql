@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS compras (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
---No tiene atributos propios
+--
 --
 -- Estructura de tabla para la tabla detallecompra
 --
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS detallecompra (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
---No tiene atributos propios
+--
 --
 -- Estructura de tabla para la tabla detalleventa
 --
