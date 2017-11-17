@@ -1,5 +1,6 @@
 <?php 
 
+<<<<<<< HEAD:modelos/modeloProveedor.php
 //Definicion de las clases
 class proveedores extends EntidadBase
 {
@@ -10,9 +11,18 @@ class proveedores extends EntidadBase
         $table = "proveedores";
         parent::__construct($table);
     }
+=======
+//Defenicion de las clases
+class Proveedor
+{
+    public $idProveedor;
+    public $proveedor;
+    public $telefono;
+    public $direccion;
+>>>>>>> c34616f466cbc940ccb19c468b5effb77465075b:modelos/Proveedor.php
 
     //get
-    public function getidProveedor()
+    public function getIdproveedor()
     {
         return $this->idProveedor;
     }
@@ -33,7 +43,8 @@ class proveedores extends EntidadBase
     }
     
     //set
-    public function setidProveedor($value)
+
+    public function setIdproveedor($value)
     {
         $this->idProveedor = $value;
     }

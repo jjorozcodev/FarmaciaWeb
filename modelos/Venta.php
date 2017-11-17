@@ -1,10 +1,10 @@
 <?php 
 
-//Definicion de las clases
-class ventas
+//Defenicion de las clases
+class Venta
 {
-    public idVenta;
-    public Fecha;
+    public $idVenta;
+    public $fecha;
 
     //get
     public function getIdVenta()
@@ -14,17 +14,17 @@ class ventas
 
     public function getFecha()
     {
-        return $this->Fecha;
+        return $this->fecha;
     }
-
     //set
+
     public function setIdVenta($value)
     {
         $this->idVenta = $value;
     }
     public function setFecha($value)
     {
-        $this->Fecha = $value;
+        $this->fecha = $value;
     }
 }
 ?>
