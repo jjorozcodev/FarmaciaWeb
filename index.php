@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <?php echo '<p>Hola Mundo</p>'; ?>
-</body>
-</html>
+<?php
+
+require_once 'configuracion/globales.php';
+require_once 'librerias/ControladorBase.php';
+require_once 'librerias/ControladorFrontal.func.php';
+
+if(isset($_GET["controlador"])){
+    $controladorObj = cargarControlador($_GET["controlador"]);
+}
+else{
+    $controladorObj = cargarControlador(CONTROLADOR_DEFECTO);
+}
+lanzarAccion($controladorObj);

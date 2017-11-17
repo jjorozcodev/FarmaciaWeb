@@ -1,12 +1,15 @@
 <?php 
 
 //Definicion de las clases
-class proveedores
+class proveedores extends EntidadBase
 {
-    public idProveedor;
-    public Proveedor;
-    public Telefono;
-    public Direccion;
+    private $idProveedor, $proveedor, $telefono, $direccion;
+
+    //Constructor
+    public function __construct($table){
+        $table = "proveedores";
+        parent::__construct($table);
+    }
 
     //get
     public function getidProveedor()
@@ -16,17 +19,17 @@ class proveedores
 
     public function getProveedor()
     {
-        return $this->Proveedor;
+        return $this->proveedor;
     }
 
     public function getTelefono()
     {
-        return $this->Telefono;
+        return $this->telefono;
     }
 
     public function getDireccion()
     {
-        return $this->Direccion;
+        return $this->direccion;
     }
     
     //set
@@ -36,15 +39,15 @@ class proveedores
     }
     public function setProveedor($value)
     {
-        $this->Proveedor = $value;
+        $this->proveedor = $value;
     }
     public function setTelefono($value)
     {
-        $this->Telefono = $value;
+        $this->telefono = $value;
     }
     public function setDireccion($value)
     {
-        $this->Direccion = $value;
+        $this->direccion = $value;
     }
 }
 ?>

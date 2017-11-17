@@ -3,8 +3,8 @@
 //Definicion de las clases
 class compras
 {
-    public idCompra;
-    public Fecha;
+    private idCompra;
+    private Fecha;
 
     //get
     public function getIdCompra()
