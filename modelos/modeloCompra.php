@@ -3,8 +3,8 @@
 //Defenicion de las clases
 class Compra
 {
-    public idCompra;
-    public fecha;
+    public $idCompra;
+    public $fecha;
 
     //get
     public function getIdCompra()

@@ -3,10 +3,10 @@
 //Defenicion de las clases
 class Proveedor
 {
-    public idProveedor;
-    public proveedor;
-    public telefono;
-    public direccion;
+    public $idProveedor;
+    public $proveedor;
+    public $telefono;
+    public $direccion;
 
     //get
     public function getIdproveedor()

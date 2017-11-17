@@ -2,11 +2,11 @@
 //Defenicion de las clases
 class Medicamento
 {
-    public idMedicamento;
-    public medicamento;
-    public presentacion;
-    public existencia;
-    public precio;
+    public $idMedicamento;
+    public $medicamento;
+    public $presentacion;
+    public $existencia;
+    public $precio;
 
     //get
     public function getIdMedicamento()

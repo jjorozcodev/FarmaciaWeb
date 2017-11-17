@@ -3,8 +3,8 @@
 //Defenicion de las clases
 class Venta
 {
-    public idVenta;
-    public fecha;
+    public $idVenta;
+    public $fecha;
 
     //get
     public function getIdVenta()

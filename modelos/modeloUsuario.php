@@ -3,9 +3,9 @@
 //Defenicion de las clases
 class Usuario
 {
-    public idUsuario;
-    public usuario;
-    public contraseña;
+    public $idUsuario;
+    public $usuario;
+    public $contraseña;
 
     //get
     public function getIdUsuario()
