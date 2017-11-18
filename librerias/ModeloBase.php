@@ -1,17 +1,17 @@
 <?php
 
     class ModeloBase extends EntidadBase{
-        private $table;
+        private $tabla;
 
-        public function __construct($table){
-            $this->table=(string) $table;
-            parent::__construct($table);
+        public function __construct($tb){
+            $this->tabla=(string) $tb;
+            parent::__construct($tb);
         }
 
-        public function ejecutarSql($query){
-            $query=$this->db()->query($query);
+        public function ejecutarSql($consultaSQL){
+            $query=$this->bd()->query($consultaSQL);
             
-            if($query){
+            if($query==true){
                 if($query->num_rows > 1){
                     while($row=$query->fetch_object()){
                         $resultSet[] = $row;
@@ -32,3 +32,4 @@
             return $resultSet;
         }
     }
+?>

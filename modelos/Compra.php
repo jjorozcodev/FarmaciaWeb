@@ -3,13 +3,8 @@
 //Defenicion de las clases
 class Compra
 {
-<<<<<<< HEAD:modelos/modeloCompra.php
-    private idCompra;
-    private Fecha;
-=======
-    public $idCompra;
-    public $fecha;
->>>>>>> c34616f466cbc940ccb19c468b5effb77465075b:modelos/Compra.php
+    private $idCompra;
+    private $fecha;
 
     //get
     public function getIdCompra()

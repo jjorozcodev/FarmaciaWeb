@@ -1,26 +1,38 @@
 <?php
-class EntidadBase{
-    private $table, $bd, $conectar;
+    class EntidadBase{
+        private $tabla;
+        private $bd;
+        private $conexion;
 
-    public function __construct($table){
-        $this->table=(string) $table;
+        public function __construct($tb){
+            $this->tabla=(string) $tb;
 
-        require_once 'conexion.php';
-        $this->conectar=new conectar();
-        $this->db=$this->conexion->conectar();
-    }
-
-    public function getConectar(){
-        return $this->conectar;
-    }
-
-    public function getAll(){
-        $query=$this->bd->query("SELECT * From $this->table ORDER BY id=$id");
-
-        if($row=$query->fetch_object()){
-            $resultSet=$row;   
+            require_once 'Conexion.php';
+            $this->conexion=new Conexion();
+            $this->bd=$this->conexion->conectar();
         }
-        
-        return $resultSet;
+
+        public function getConexion(){
+            return $this->conexion;
+        }
+
+        public function bd(){
+            return $this->bd;
+        }
+
+        public function getTodo(){
+            $query=$this->bd->query("SELECT * From $this->tabla");
+            $resultSet=array();
+            while($row=$query->fetch_object()){
+                $resultSet[]=$row;   
+            }
+            
+            return $resultSet;
+        }
+
+        public function deleteById($id){
+            $query=$this->bd->query("DELETE FROM $this->tabla WHERE idProveedor=$id"); 
+            return $query;
+        }
+
     }
-}

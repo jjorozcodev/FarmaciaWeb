@@ -1,27 +1,27 @@
 <?php
-
-class ControladorBase{
-    public function __construct(){
-        require_once 'EntidadBase.php';
-        require_once 'ModeloBase.php';
-        
-        foreach (glob("modelos/*.php") as $file){
-            require_once $file;
-        }
-    }
-
-    public function view($vista, $datos){
-        foreach ($datos as $id_assoc => $valor){
-            $($id_assoc) = $valor;
+    class ControladorBase{
+        public function __construct(){
+            require_once 'EntidadBase.php';
+            require_once 'ModeloBase.php';
+            
+            foreach (glob("modelos/*.php") as $file){
+                require_once $file;
+            }
         }
 
-        require_once 'librerias/AyudaVistas.php';
-        $helper=new AyudaVistas();
+        public function view($vista, $datos){
+            foreach ($datos as $id_assoc => $valor){
+                ${$id_assoc} = $valor;
+            }
 
-        require_once 'view'.$vista.'View.php';
-    }
+            require_once 'librerias/AyudaVistas.php';
+            $helper=new AyudaVistas();
 
-    public function redirect($controlador=CONTROLADOR_DEFECTO, $accion=ACCION_DEFECTO){
-        header("Location:index.php?controlador=".$controlador."&accion=".$accion);
+            require_once 'vistas/'.$vista.'Vista.php';
+        }
+
+        public function redirect($controlador=CONTROLADOR_DEFECTO, $accion=ACCION_DEFECTO){
+            header("Location:index.php?controller=".$controlador."&action=".$accion);
+        }
     }
-}
+?>
