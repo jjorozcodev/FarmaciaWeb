@@ -11,12 +11,11 @@ class MedicamentoControlador extends ControladorBase{
         $allMedicamento = $medicamento->getTodo();
 
         $this->view("Medicamento", array(
-            "allMedicamento"  => $allMedicamento,
-           // "JJ"=> "JJ saluda desde MVC" la verdad no se si esto se ocupe XD
+            "allMedicamento"  => $allMedicamento
         ));
     } 
 
-    public function crear(){
+    public function registrar(){
         
         if(isset($_POST["idMedicamento"])){
 
@@ -25,7 +24,7 @@ class MedicamentoControlador extends ControladorBase{
             $medicamento->setIdMedicamento($_POST["idMedicamento"]);
             $medicamento->setMedicamento($_POST["medicamento"]);
             $medicamento->setPresentacion($_POST["presentacion"]);
-            $medicamento->setExistencia($_POST["existencia"]);
+            $medicamento->setExistencias($_POST["existencias"]);
             $medicamento->setPrecio($_POST["precio"]);
             $save=$medicamento->guardar();
         }
@@ -37,9 +36,9 @@ class MedicamentoControlador extends ControladorBase{
             $id=(int)$_GET["idMedicamento"];
              
             $medicamento =new Medicamento();
-            $medicamento->deleteById($id); 
+            $del=$medicamento->borrar($id);
         }
-        $this->redirect();
+        $this->redirect("Medicamento", "index");
     }
 
 }

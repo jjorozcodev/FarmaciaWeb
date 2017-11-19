@@ -11,12 +11,11 @@ class ProveedorControlador extends ControladorBase{
         $allProveedores = $proveedor->getTodo();
 
         $this->view("Proveedor", array(
-            "allProveedores"  => $allProveedores,
-            "JJ"              => "JJ saluda desde MVC"
+            "allProveedores"  => $allProveedores
         ));
     } 
 
-    public function registro(){
+    public function registrar(){
         
         if(isset($_POST["idProveedor"])){
 
@@ -38,7 +37,7 @@ class ProveedorControlador extends ControladorBase{
             $proveedor=new Proveedor();
             $proveedor->deleteById($id); 
         }
-        $this->redirect();
+        $this->redirect("Proveedor", "index");
     }
 
 }

@@ -5,7 +5,7 @@ class Medicamento extends EntidadBase
     private $idMedicamento;
     private $medicamento;
     private $presentacion;
-    private $existencia;
+    private $existencias;
     private $precio;
 
     //creacion del constructor
@@ -30,9 +30,9 @@ class Medicamento extends EntidadBase
         return $this->presentacion;
     }
 
-    public function getExistencia()
+    public function getExistencias()
     {
-        return $this->existencia;
+        return $this->existencias;
     }
 
     public function getPrecio()
@@ -54,9 +54,9 @@ class Medicamento extends EntidadBase
     {
         $this->presentacion = $value;
     }
-    public function setExistencia($value)
+    public function setExistencias($value)
     {
-        $this->excistencia = $value;
+        $this->existencias = $value;
     }
     public function setPrecio($value)
     {
@@ -65,14 +65,20 @@ class Medicamento extends EntidadBase
 
      //Método Para guardar un medicamento
      public function guardar(){
-        $query="INSERT INTO medicamentos (idMedicamento, Medicamento, Presentacion, Existencia ,Precio)
+        $query="INSERT INTO medicamentos (idMedicamento, Medicamento, Presentacion, Existencias, Precio)
                 VALUES (NULL,
                         '".$this->medicamento."' ,
                         '".$this->presentacion."' ,
-                        '".$this->existencia."' ,
+                        '".$this->existencias."' ,
                         '".$this->precio."');";
         $guardado = $this->bd()->query($query);
         return $guardado;
+    }
+
+    public function borrar(int $id){
+        $query="DELETE FROM medicamentos WHERE idMedicamento=".$id;
+        $borrado=$this->bd()->query($query);
+        return $borrado;
     }
 }
 ?>

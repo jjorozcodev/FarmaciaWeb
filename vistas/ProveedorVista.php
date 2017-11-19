@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <script src="recursos/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form action="<?php echo $helper->url("Proveedor", "registro");  ?>" method="post" class="col-lg-5">
+    <form action="<?php echo $helper->url("Proveedor", "registrar");  ?>" method="post" class="col-lg-5">
         <h3>Añadir Proveedor</h3>
         <hr>
         ID Proveedor: <input type="text" name="idProveedor" class="form-control"/>

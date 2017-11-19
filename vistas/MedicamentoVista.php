@@ -14,14 +14,14 @@
     <script src="recursos/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form action="<?php echo $helper->url("Medicamento", "crear");  ?>" method="post" class="col-lg-5"><!--corresponde al metodo crear medicamento-->
+    <form action="<?php echo $helper->url("Medicamento", "registrar");  ?>" method="post" class="col-lg-5"><!--corresponde al metodo crear medicamento-->
         <h3>Añadir Medicamento</h3>
         <hr>
         <!--Creacion de formulario-->
         ID Medicamento: <input type="text" name="idMedicamento" class="form-control"/>
         Medicamento: <input type="text" name="medicamento" class="form-control"/>
         Presentacion: <input type="text" name="presentacion" class="form-control"/>
-        Existencia: <input type="text" name="existencia" class="form-control"/>
+        Existencia: <input type="text" name="existencias" class="form-control"/>
         Precio: <input type="text" name="precio" class="form-control"/>
         
         <!--button-->        
@@ -37,7 +37,7 @@
                 <?php echo $medicamento->idMedicamento; ?> -
                 <?php echo $medicamento->Medicamento; ?> -
                 <?php echo $medicamento->Presentacion; ?> -
-                <?php echo $medicamento->Existencia; ?>
+                <?php echo $medicamento->Existencias; ?> -
                 <?php echo $medicamento->Precio; ?>
                 
                 <div style="float:right;">
