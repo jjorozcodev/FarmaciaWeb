@@ -1,12 +1,18 @@
 <?php 
 //Defenicion de las clases
-class Medicamento
+class Medicamento extends EntidadBase
 {
-    public $idMedicamento;
-    public $medicamento;
-    public $presentacion;
-    public $existencia;
-    public $precio;
+    private $idMedicamento;
+    private $medicamento;
+    private $presentacion;
+    private $existencia;
+    private $precio;
+
+    //creacion del constructor
+    public function __construct() {
+        $tb = "medicamentos";
+        parent::__construct($tb);
+    }
 
     //get
     public function getIdMedicamento()
@@ -55,6 +61,18 @@ class Medicamento
     public function setPrecio($value)
     {
         $this->precio = $value;
+    }
+
+     //Método Para guardar un medicamento
+     public function guardar(){
+        $query="INSERT INTO medicamentos (idMedicamento, Medicamento, Presentacion, Existencia ,Precio)
+                VALUES (NULL,
+                        '".$this->medicamento."' ,
+                        '".$this->presentacion."' ,
+                        '".$this->existencia."' ,
+                        '".$this->precio."');";
+        $guardado = $this->bd()->query($query);
+        return $guardado;
     }
 }
 ?>

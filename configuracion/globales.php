@@ -1,4 +1,7 @@
 <?php
-    define("CONTROLADOR_DEFECTO", "Proveedor");
+    define("CONTROLADOR_DEFECTO", "medicamento");
     define("ACCION_DEFECTO", "index");
+    define("CONTROLADOR", "proveedor");
+    
+    
 ?>

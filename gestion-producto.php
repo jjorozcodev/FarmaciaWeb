@@ -1,12 +1,13 @@
+<!--HACER HASTA TENER EL PRIMERO LISTO-->
 <!DOCTYPE HTML>
 <!--
-	Farmacia Web
+	Forty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Farmacia Web</title>
+		<title>Landing - Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="recursos/js/ie/html5shiv.js"></script><![endif]-->
@@ -20,7 +21,8 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
 						<a href="index.html" class="logo"><strong>Farmacia Web</strong> <span>by JAB</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
@@ -36,22 +38,23 @@
 							<!--<li><a href="elements.html">Elements</a></li>-->
 						</ul>
 						<ul class="actions vertical">
-							<li><a href="#" class="button special fit">Administrar</a></li>
-							<li><a href="#" class="button fit">Ingresar</a></li>
+							<li><a href="#" class="button special fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
 						</ul>
 					</nav>
 
 				<!-- Banner -->
-					<section id="banner" class="major">
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
 						<div class="inner">
+							<span class="image">
+								<img src="images/pic07.jpg" alt="" />
+							</span>
 							<header class="major">
-								<h1>Farmacia Web</h1>
+								<h1>Medicamento</h1>
 							</header>
 							<div class="content">
-								<p>Administra tu farmacia a través de la web.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Continuar</a></li>
-								</ul>
+								<p>Gestion de Medicamento</p>
 							</div>
 						</div>
 					</section>
@@ -60,64 +63,13 @@
 					<div id="main">
 
 						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="gestion-producto.php" class="link">Productos</a></h3>
-										<p>Gestionar</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="gestion-inventario.html" class="link">Inventario</a></h3>
-										<p>Gestionar</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="gestion-proveedor.php" class="link">Proveedores</a></h3>
-										<p>Gestionar</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="gestion-empleado.html" class="link">Empleados</a></h3>
-										<p>Gestionar</p>
-									</header>
-								</article>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="gestion-cliente.html" class="link">Clientes</a></h3>
-										<p>Gestionar</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="venta-factura.html" class="link">Factura</a></h3>
-										<p>Punto de venta</p>
-									</header>
-								</article>
+							<section id="one">
+								<div class="inner">
+								<?php include('medicamento-tabla.php') ?>
+								</div>
 							</section>
-					</div>
+                    </div>
+                    
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">

@@ -8,7 +8,7 @@ if(isset($_GET["controlador"])){
     $controladorObj = cargarControlador($_GET["controlador"]);
 }
 else{
-    $controladorObj = cargarControlador(CONTROLADOR);
+    $controladorObj = cargarControlador(CONTROLADOR_DEFECTO);
 }
 lanzarAccion($controladorObj);
 ?>

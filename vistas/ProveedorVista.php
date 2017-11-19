@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <script src="recursos/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form action="<?php echo $helper->url("Proveedor", "crear");  ?>" method="post" class="col-lg-5">
+    <form action="<?php echo $helper->url("Proveedor", "registro");  ?>" method="post" class="col-lg-5">
         <h3>Añadir Proveedor</h3>
         <hr>
         ID Proveedor: <input type="text" name="idProveedor" class="form-control"/>

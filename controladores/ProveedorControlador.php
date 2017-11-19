@@ -16,7 +16,7 @@ class ProveedorControlador extends ControladorBase{
         ));
     } 
 
-    public function crear(){
+    public function registro(){
         
         if(isset($_POST["idProveedor"])){
 
@@ -42,3 +42,4 @@ class ProveedorControlador extends ControladorBase{
     }
 
 }
+?>
