@@ -22,7 +22,7 @@
 				<!-- Header -->
 				<!-- Note: The "styleN" class below should match that of the banner element. -->
 					<header id="header" class="alt style2">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+						<a href="index.html" class="logo"><strong>Farmacia Web</strong> <span>by JAB</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -50,11 +50,10 @@
 								<img src="images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Landing</h1>
+								<h1>Proveedor</h1>
 							</header>
 							<div class="content">
-								<p>Lorem ipsum dolor sit amet nullam consequat<br />
-								sed veroeros. tempus adipiscing nulla.</p>
+								<p>Gestion de proveedores</p>
 							</div>
 						</div>
 					</section>
