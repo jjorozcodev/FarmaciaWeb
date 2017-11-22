@@ -66,5 +66,16 @@
             return $guardado;
         }
 
+        //Método actualizar --- para actualizar en la BD
+        public function actualizar(){
+            $query="UPDATE proveedores 
+                    SET Proveedor='".$this->proveedor."', 
+                        Telefono='".$this->telefono."', 
+                        Direccion='".$this->direccion."'
+                    WHERE idProveedor=".$this->idProveedor.";";
+            $actualizado = $this->bd()->query($query);
+            return $actualizado;
+        }
+
     }
 ?>

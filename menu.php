@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Farmacia Web</title>
-
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="recursos/css/main.css">
 
+    <!-- JavaScripts -->
+    <script src="recursos/js/jquery-3.2.1.min.js"></script>
+    <script src="recursos/js/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- Wrapper -->
@@ -54,29 +59,11 @@
                     <section id="one" class="tiles">
                         <article>
                             <span class="image">
-                                <img src="images/pic01.jpg" alt="" />
-                            </span>
-                            <header class="major">
-                                <h3><a href="index.php?controller=Medicamento&action=index" class="link">Medicamentos</a></h3>
-                                <p>Gestionar</p>
-                            </header>
-                        </article>
-                        <article>
-                            <span class="image">
-                                <img src="images/pic02.jpg" alt="" />
-                            </span>
-                            <header class="major">
-                                <h3><a href="gestion-inventario.html" class="link">Inventario</a></h3>
-                                <p>Gestionar</p>
-                            </header>
-                        </article>
-                        <article>
-                            <span class="image">
                                 <img src="images/pic03.jpg" alt="" />
                             </span>
                             <header class="major">
-                                <h3><a href="index.php?controller=Proveedor&action=index" class="link">Proveedores</a></h3>
-                                <p>Gestionar</p>
+                                <h3><a href="index.php?controller=Compra&action=index" class="link">Compras</a></h3>
+                                <p>Registrar</p>
                             </header>
                         </article>
                         <article>
@@ -84,18 +71,17 @@
                                 <img src="images/pic04.jpg" alt="" />
                             </span>
                             <header class="major">
-                                <h3><a href="gestion-empleado.html" class="link">Empleados</a></h3>
-                                <p>Gestionar</p>
+                                <h3><a href="index.php?controller=Venta&action=index" class="link">Ventas</a></h3>
+                                <p>Facturar</p>
                             </header>
-                        </article>
                         </article>
                         <article>
                             <span class="image">
                                 <img src="images/pic06.jpg" alt="" />
                             </span>
                             <header class="major">
-                                <h3><a href="gestion-cliente.html" class="link">Clientes</a></h3>
-                                <p>Gestionar</p>
+                                <h3><a href="index.php?controller=Medicamento&action=index" class="link">Medicamentos</a></h3>
+                                <p>Administrar</p>
                             </header>
                         </article>
                         <article>
@@ -103,27 +89,27 @@
                                 <img src="images/pic05.jpg" alt="" />
                             </span>
                             <header class="major">
-                                <h3><a href="venta-factura.html" class="link">Factura</a></h3>
-                                <p>Punto de venta</p>
+                                <h3><a href="index.php?controller=Proveedor&action=index" class="link">Proveedores</a></h3>
+                                <p>Gestionar</p>
                             </header>
                         </article>
                     </section>
             </div>
         <!-- Footer -->
-            <footer id="footer">
-                <div class="inner">
-                    <ul class="icons">
-                        <li><a href="https://www.twitter.com/farmaciaweb" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="https://www.facebook.com/farmaciaweb" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="https://www.instagram.com/farmaciaweb" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="https://www.github.com/farmaciaweb" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                        <li><a href="https://www.github.com/farmaciaweb" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    </ul>
-                    <ul class="copyright">
-                        <li>&copy; UCA</li><li>Design: <a href="https://www.uca.edu.ni">JAB</a></li>
-                    </ul>
-                </div>
-            </footer>
+        <footer id="footer" >
+            <div class="inner">
+                <ul class="icons">
+                    <!--<li><a href="https://www.twitter.com/farmaciaweb" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>-->
+                    <li><a href="https://www.facebook.com/JJ.OrozcoLopez.13" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                    <!--<li><a href="https://www.instagram.com/farmaciaweb" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>-->
+                    <li><a href="https://github.com/soy-jj/farmaciaweb" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                    <!--<li><a href="https://www.github.com/farmaciaweb" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+                </ul>
+                <ul class="copyright">
+                    <li>Todos los derechos reservados &copy UCA 2017</li><li>Design: <a href="http://www.uca.edu.ni"><b>Equipo Jiren</b></a></li>
+                </ul>
+            </div>
+        </footer>
 
     </div>
 
@@ -134,6 +120,7 @@
         <script src="recursos/js/skel.min.js"></script>
         <script src="recursos/js/util.js"></script>
         <script src="recursos/js/main.js"></script>
+
 
 </body>
 </html>

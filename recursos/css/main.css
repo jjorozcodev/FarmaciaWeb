@@ -2535,7 +2535,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: transparent;
+		background-color: #333859;
 		border: 0;
 		border-radius: 0;
 		box-shadow: inset 0 0 0 2px #ffffff;
@@ -2697,7 +2697,7 @@
 		.button.special {
 			background-color: #ffffff;
 			box-shadow: none;
-			color: #242943;
+			color: #2a2f4a;
 		}
 
 			input[type="submit"].special:hover, input[type="submit"].special:active,
@@ -2710,7 +2710,7 @@
 			.button.special:hover,
 			.button.special:active {
 				background-color: #9bf1ff;
-				color: #242943 !important;
+				color: #2a2f4a !important;
 			}
 
 			input[type="submit"].special:active,
@@ -2857,19 +2857,19 @@
 				width: 60%;
 			}
 
-			.tiles article:nth-child(6n - 5):before {
+			.tiles article:nth-child(6n - 3):before {
 				background-color: #6fc3df;
 			}
 
-			.tiles article:nth-child(6n - 4):before {
+			.tiles article:nth-child(6n - 2):before {
 				background-color: #8d82c4;
 			}
 
-			.tiles article:nth-child(6n - 3):before {
+			.tiles article:nth-child(6n - 5):before {
 				background-color: #ec8d81;
 			}
 
-			.tiles article:nth-child(6n - 2):before {
+			.tiles article:nth-child(6n - 4):before {
 				background-color: #e7b788;
 			}
 
@@ -3286,19 +3286,21 @@
 		}
 
 			#header.alt.style1 .logo strong {
-				color: #6fc3df;
-			}
-
-			#header.alt.style2 .logo strong {
-				color: #8d82c4;
-			}
-
-			#header.alt.style3 .logo strong {
+				
 				color: #ec8d81;
 			}
 
-			#header.alt.style4 .logo strong {
+			#header.alt.style2 .logo strong {
 				color: #e7b788;
+				
+			}
+
+			#header.alt.style3 .logo strong {
+				color: #6fc3df;
+			}
+
+			#header.alt.style4 .logo strong {
+				color: #8d82c4;
 			}
 
 			#header.alt.style5 .logo strong {
@@ -3520,19 +3522,19 @@
 				opacity: 0.75;
 			}
 
-		#banner.style1:after {
+		#banner.style3:after {
 			background-color: #6fc3df;
 		}
 
-		#banner.style2:after {
+		#banner.style4:after {
 			background-color: #8d82c4;
 		}
 
-		#banner.style3:after {
+		#banner.style1:after {
 			background-color: #ec8d81;
 		}
 
-		#banner.style4:after {
+		#banner.style2:after {
 			background-color: #e7b788;
 		}
 
@@ -3616,11 +3618,16 @@
 
 		}
 
+
+
+
 /* Main */
 
 	#main {
 		background-color: #2a2f4a;
 	}
+
+
 
 		#main > * {
 			border-top: solid 1px rgba(212, 212, 255, 0.1);
@@ -3986,3 +3993,76 @@
 			opacity: 1;
 			visibility: visible;
 		}
+
+
+
+/* MODAL */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #333859;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #fff;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #2A2F4A;
+    color: #fff;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #2A2F4A;
+    color: #fff;
+}				

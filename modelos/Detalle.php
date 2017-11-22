@@ -1,16 +1,17 @@
 <?php 
 
 //Defenicion de las clases
-class Detalleventa
+class Detalle extends EntidadBase
 {
-    public $idVenta;
+    public $id;
     public $idMedicamento;    
     public $cantidad;
 
     //get
-    public function getIdVenta()
+
+    public function getId()
     {
-        return $this->idVenta;
+        return $this->id;
     }
 
     public function getIdMedicamento()
@@ -24,10 +25,11 @@ class Detalleventa
     }
     //set
 
-    public function setIdVenta($value)
+    public function setId($value)
     {
-        $this->idVenta = $value;
+        $this->id = $value;
     }
+
     public function setIdMedicamento($value)
     {
         $this->idMedicamento = $value;
@@ -35,6 +37,11 @@ class Detalleventa
     public function setCantidad($value)
     {
         $this->cantidad = $value;
+    }
+
+    //Constructor
+    public function __construct($tabla) {
+        parent::__construct($tabla);
     }
 }
 ?>

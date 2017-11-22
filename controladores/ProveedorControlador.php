@@ -17,15 +17,29 @@ class ProveedorControlador extends ControladorBase{
 
     public function registrar(){
         
-        if(isset($_POST["idProveedor"])){
+        if(isset($_POST["proveedor"])){
 
             $proveedor = new Proveedor();
 
-            $proveedor->setIdProveedor($_POST["idProveedor"]);
+            $proveedor->setIdProveedor(-1);
             $proveedor->setProveedor($_POST["proveedor"]);
             $proveedor->setTelefono($_POST["telefono"]);
             $proveedor->setDireccion($_POST["direccion"]);
             $save=$proveedor->guardar();
+        }
+        $this->redirect("Proveedor", "index");
+    }
+
+    public function editar(){
+        if(isset($_GET["idProveedor"])){
+            
+            $proveedor = new Proveedor();
+
+            $proveedor->setIdProveedor($_GET["idProveedor"]);
+            $proveedor->setProveedor($_POST["proveedor"]);
+            $proveedor->setTelefono($_POST["telefono"]);
+            $proveedor->setDireccion($_POST["direccion"]);
+            $editado=$proveedor->actualizar();
         }
         $this->redirect("Proveedor", "index");
     }
