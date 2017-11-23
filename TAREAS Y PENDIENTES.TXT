@@ -1,0 +1,7 @@
+* Eliminar archivos que no están siendo utilizados en el proyecto (Asegurarse antes de eliminar)
+
+* Terminar de adaptar plantilla que usamos en el proyecto
+    - Algunas páginas html se encuentran sin personalizar
+
+* Validar entradas a formularios (mediante JavaScript)
+    - Existe ejemplo del profesor cuando vimos plantillas y formalarios.

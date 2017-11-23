@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Página de Proveedores</title>
+    <title>Farmacia Web | Proveedores</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="recursos/css/main.css">
     
-    
     <!-- JavaScripts -->
     <script src="recursos/js/jquery-3.2.1.min.js"></script>
-    <script src="recursos/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -43,7 +41,7 @@
             <!-- One -->
             <section id="one">
                 <div>
-                    <h3>Listado de Proveedores</h3>
+                    <h1>Listado de Proveedores</h1>
                     <input id="agregar" type="button" value="Nuevo" class="button special" />
                     
                     <!-- Tabla -->
@@ -63,43 +61,44 @@
                         </thead>
                         <tbody class="contenidoTabla">
                         <tr>
-                        <?php foreach($allProveedores as $proveedor) { //recorremos el array de objetos y obtenemos el valor de las propiedades ?>
+                        <?php foreach($allProveedores as $proveedor) { ?>
                             <?php echo "<tr>" ?>
                                 <?php echo "<td>".$proveedor->idProveedor."</td>" ?>
                                 <?php echo "<td>".$proveedor->Proveedor."</td>" ?>
                                 <?php echo "<td>".$proveedor->Telefono."</td>" ?>
                                 <?php echo "<td>".$proveedor->Direccion."</td>" ?>
-                                <td><input type="button" value="Editar" class="button special small edicion" onclick="mostrarModalEditar(<?php echo $proveedor->idProveedor; ?>)" /> 
+                                <td>
+                                    <input type="button" value="Editar" class="button special small edicion" onclick="mostrarModalEditar(<?php echo $proveedor->idProveedor; ?>, '<?php echo $proveedor->Proveedor; ?>', '<?php echo $proveedor->Telefono; ?>', '<?php echo $proveedor->Direccion; ?>')" /> 
                                     <a class="btn button small" href="<?php echo $helper->url("Proveedor","borrar"); ?>&idProveedor=<?php echo $proveedor->idProveedor; ?>">Borrar</a>
-                                    <!--Agregar otro link para más acciones-->
                                 </td>                     
                             <?php echo "</tr>" ?>
                         <?php } ?>
-
                         </tbody>
                     </table>
                 </div>
             </section>    
         </div>
+
         <!-- Footer -->
         <footer id="footer">
             <div class="inner">
                 <ul class="icons">
-                    <!--<li><a href="https://www.twitter.com/farmaciaweb" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>-->
-                    <li><a href="https://www.facebook.com/JJ.OrozcoLopez.13" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://twitter.com/ucadenicaragua" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.facebook.com/isiUCA/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
                     <!--<li><a href="https://www.instagram.com/farmaciaweb" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>-->
                     <li><a href="https://github.com/soy-jj/farmaciaweb" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                    <!--<li><a href="https://www.github.com/farmaciaweb" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+                    <li><a href="https://www.facebook.com/FCTyA.UCA/" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
                 </ul>
                 <ul class="copyright">
-                    <li>Todos los derechos reservados &copy UCA 2017</li><li>Design: <a href="http://www.uca.edu.ni"><b>Equipo Jiren</b></a></li>
+                    <li>Todos los derechos reservados &copy UCA 2017</li><li>Design: <a href="http://www.uca.edu.ni"><b>by JAB</b></a></li>
                 </ul>
             </div>
         </footer>
 
     </div>
         
-        <!--POPUP (permanece oculto)-->                 
+        <!--POPUPs (permanecen ocultos)-->                 
+        
         <div id="modalAgregar" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -107,17 +106,19 @@
                 </div>
                 <div class="modal-body">
                     <!--Creacion de formulario-->
-                    Proveedor: <input type="text" name="proveedor" class="form-control"/>
-                    Teléfono: <input type="text" name="telefono" class="form-control"/>
-                    Dirección: <input type="text" name="direccion" class="form-control"/>  
+                    <form action="<?php echo $helper->url("Proveedor", "registrar");  ?>" method="post" class="col-lg-5">
+                        Proveedor: <input type="text" name="proveedor" class="form-control"/>
+                        Teléfono: <input type="text" name="telefono" class="form-control"/>
+                        Dirección: <input type="text" name="direccion" class="form-control"/>  
+                        <br>        
+                        <input type="submit" value="Agregar" class="button special small"/>
+                        <input id="cerrarAgregar" type="button" value="Cancelar" class="button small close"/>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <!--button-->        
-                    <input type="submit" value="Agregar" class="button special small"/>
-                    <input id="cerrarAgregar" type="button" value="Cancelar" class="button small close"/>
-                </div>
+               
             </div>
         </div>
+        
         <div id="modalEditar" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -125,118 +126,37 @@
                 </div>
                 <div class="modal-body">
                     <!--Creacion de formulario-->
-                    <form action="" method="post" class="col-lg-5"><!--corresponde al metodo crear proveedor-->
-                        <input id="id" type="text" name="idProveedor" class="form-control" style="display: none;"/>
-                        Proveedor: <input type="text" name="proveedor" class="form-control"/>
-                        Teléfono: <input type="text" name="telefono" class="form-control"/>
-                        Dirección: <input type="text" name="direccion" class="form-control"/>
-                        
+                    <form action="<?php echo $helper->url("Proveedor", "editar");  ?>" method="post" class="col-lg-5">
+                        <input id="id" type="text" name="idProveedor" class="form-control" style="display:none"/>
+                        Proveedor: <input id="prov" type="text" name="proveedor" class="form-control"/>
+                        Teléfono: <input id="tel" type="text" name="telefono" class="form-control"/>
+                        Dirección: <input id="dir" type="text" name="direccion" class="form-control"/>
+                        <br>
+                        <input type="submit" value="Editar" class="button special small confirmar"/>
+                        <input id="cerrarEditar" type="button" value="Cancelar" class="button small close"/>    
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <!--button-->        
-                    <input type="submit" value="Editar" class="button special small confirmar"/>
-                    <input id="cerrarEditar" type="button" value="Cancelar" class="button small close"/>
                 </div>
             </div>
         </div>  
-        <div class="overlay-container">
-            <div class="window-container zoomout">
-                
-            </div>
-        </div>
-        <!-- Scripts -->
+        
+        <!-- SCRIPTS -->
+        <script src="recursos/js/funciones.js"></script>
+
         <script src="recursos/js/jquery.min.js"></script>
         <script src="recursos/js/jquery.scrolly.min.js"></script>
         <script src="recursos/js/jquery.scrollex.min.js"></script>
         <script src="recursos/js/skel.min.js"></script>
         <script src="recursos/js/util.js"></script>
         <script src="recursos/js/main.js"></script>
-
-        <!-- Funciones propias -->
-        <script>
-            !window.jQuery && document.write(unescape('%3Cscript src="recursos/js/jquery-3.2.1.min.js"%3E%3C/script%3E'))
-        </script>
         
-        
-        <script>
-            $(document).ready(function() {
-
-            $('#criterio').keyup(function () {
-                var rex = new RegExp($(this).val(), 'i');
-                    $('.contenidoTabla tr').hide();
-                    $('.contenidoTabla tr').filter(function () {
-                        return rex.test($(this).text());
-                    }).show();
-            
-                });
-
-                $('.button').click(function() {
-		
-                    type = $(this).attr('data-type');
-                    
-                    $('.overlay-container').fadeIn(function() {
-                        
-                        window.setTimeout(function(){
-                            $('.window-container.'+type).addClass('window-container-visible');
-                        }, 30);
-                        
-                    });
-                });
-                
-                $('.close').click(function() {
-                    $('.overlay-container').fadeOut().end().find('.window-container').removeClass('window-container-visible');
-                });
-
-
-
-            });
-        </script>
-        <script>
-            // MOSTRAR EL POPUP PARA AGREGAR
-            var modalAgregar = document.getElementById('modalAgregar');
-            
-            var mostrarAgregar = document.getElementById('agregar');
-
-            mostrarAgregar.onclick = function() {
-                modalAgregar.style.display = "block";
-            }
-
-            var cerrarAgregar = document.getElementById('cerrarAgregar');
-
-            cerrarAgregar.onclick = function() {
-                modalAgregar.style.display = "none";
-            }
-
-            
-            //CONFIRMAR EDICION
-            var modalEditar = document.getElementById('modalEditar');
-            var confirmarEditar = document.getElementsByClassName('confirmar');
-            var i;
-            for (i = 0; i < confirmarEditar.length; i++) {
-                confirmarEditar[i].addEventListener('click', function(){
-                    var url = "<?php echo $helper->url("Proveedor","editar") ?>";
-                    var urlID= url+"&idProveedor="+$('#id').val()
-                    //"&idProveedor="+$('#id').val());
-                    alert(ulrID);
-                    
-                });
-            }
-           
-            //CERRAR EL POPUP PARA EDITAR
-            var cerrarEditar = document.getElementById('cerrarEditar');
-            cerrarEditar.onclick = function() {
-                modalEditar.style.display = "none";
-            }             
-           
-        </script>
-            
-         <!--MOSTRAR EL POPUP PARA EDITAR-->
-         <script type="text/javascript">
-            function mostrarModalEditar(id) {
-                var modalEditar = document.getElementById('modalEditar');
-                modalEditar.style.display = "block";
-                $("#id").val(id); //asigna el valor al campo id
+        <!--SCRIPT PARA MOSTRAR DATOS DE LA TABLA EN EL MODAL DE EDICIÓN-->
+        <script type="text/javascript">
+            function mostrarModalEditar(id, prov, tel, dir) {
+                $('#modalEditar').show();
+                $("#id").val(id);
+                $("#prov").val(prov);
+                $("#tel").val(tel);
+                $("#dir").val(dir);
             }
         </script>
 </body>

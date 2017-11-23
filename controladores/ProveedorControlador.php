@@ -21,7 +21,7 @@ class ProveedorControlador extends ControladorBase{
 
             $proveedor = new Proveedor();
 
-            $proveedor->setIdProveedor(-1);
+            $proveedor->setIdProveedor(NULL);
             $proveedor->setProveedor($_POST["proveedor"]);
             $proveedor->setTelefono($_POST["telefono"]);
             $proveedor->setDireccion($_POST["direccion"]);
@@ -31,15 +31,16 @@ class ProveedorControlador extends ControladorBase{
     }
 
     public function editar(){
-        if(isset($_GET["idProveedor"])){
+        if(isset($_POST["idProveedor"])){
             
             $proveedor = new Proveedor();
 
-            $proveedor->setIdProveedor($_GET["idProveedor"]);
+            $proveedor->setIdProveedor($_POST["idProveedor"]);
             $proveedor->setProveedor($_POST["proveedor"]);
             $proveedor->setTelefono($_POST["telefono"]);
             $proveedor->setDireccion($_POST["direccion"]);
             $editado=$proveedor->actualizar();
+           
         }
         $this->redirect("Proveedor", "index");
     }
@@ -49,7 +50,7 @@ class ProveedorControlador extends ControladorBase{
             $id=(int)$_GET["idProveedor"];
              
             $proveedor=new Proveedor();
-            $proveedor->deleteById($id); 
+            $proveedor->borrar($id); 
         }
         $this->redirect("Proveedor", "index");
     }

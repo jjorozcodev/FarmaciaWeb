@@ -77,5 +77,10 @@
             return $actualizado;
         }
 
+        public function borrar(int $id){
+            $query="DELETE FROM proveedores WHERE idProveedor=".$id;
+            $borrado=$this->bd()->query($query);
+            return $borrado;
+        }
     }
 ?>

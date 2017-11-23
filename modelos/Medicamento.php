@@ -75,6 +75,18 @@ class Medicamento extends EntidadBase
         return $guardado;
     }
 
+    //Método actualizar --- para actualizar en la BD
+    public function actualizar(){
+        $query="UPDATE medicamentos 
+                SET Medicamento='".$this->medicamento."', 
+                    Presentacion='".$this->presentacion."', 
+                    Existencias='".$this->existencias."',
+                    Precio='".$this->precio."'
+                WHERE idMedicamento=".$this->idMedicamento.";";
+        $actualizado = $this->bd()->query($query);
+        return $actualizado;
+    }
+
     public function borrar(int $id){
         $query="DELETE FROM medicamentos WHERE idMedicamento=".$id;
         $borrado=$this->bd()->query($query);

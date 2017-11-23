@@ -30,9 +30,4 @@
             return $resultSet;
         }
 
-        public function deleteById($id){
-            $query=$this->bd->query("DELETE FROM $this->tabla WHERE idProveedor=$id"); 
-            return $query;
-        }
-
     }

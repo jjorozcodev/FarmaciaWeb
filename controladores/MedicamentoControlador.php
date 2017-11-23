@@ -8,20 +8,20 @@ class MedicamentoControlador extends ControladorBase{
     public function index(){
         $medicamento = new Medicamento();
 
-        $allMedicamento = $medicamento->getTodo();
+        $allMedicamentos = $medicamento->getTodo();
 
         $this->view("Medicamento", array(
-            "allMedicamento"  => $allMedicamento
+            "allMedicamentos"  => $allMedicamentos
         ));
     } 
 
     public function registrar(){
         
-        if(isset($_POST["idMedicamento"])){
+        if(isset($_POST["medicamento"])){
 
             $medicamento = new Medicamento();
 
-            $medicamento->setIdMedicamento($_POST["idMedicamento"]);
+            $medicamento->setIdMedicamento(NULL);
             $medicamento->setMedicamento($_POST["medicamento"]);
             $medicamento->setPresentacion($_POST["presentacion"]);
             $medicamento->setExistencias($_POST["existencias"]);
@@ -31,12 +31,28 @@ class MedicamentoControlador extends ControladorBase{
         $this->redirect("Medicamento", "index");
     }
 
+
+    public function editar(){
+        if(isset($_POST["idMedicamento"])){
+            
+            $medicamento = new Medicamento();
+
+            $medicamento->setIdMedicamento($_POST["idMedicamento"]);
+            $medicamento->setMedicamento($_POST["medicamento"]);
+            $medicamento->setPresentacion($_POST["presentacion"]);
+            $medicamento->setExistencias($_POST["existencias"]);
+            $medicamento->setPrecio($_POST["precio"]);
+            $save=$medicamento->actualizar();
+        }
+        $this->redirect("Medicamento", "index");
+    }
+
     public function borrar(){
         if(isset($_GET["idMedicamento"])){ 
             $id=(int)$_GET["idMedicamento"];
              
             $medicamento =new Medicamento();
-            $del=$medicamento->borrar($id);
+           $medicamento->borrar($id);
         }
         $this->redirect("Medicamento", "index");
     }
