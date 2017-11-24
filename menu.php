@@ -29,7 +29,7 @@
             <nav id="menu">
                 <ul class="links">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="sugerencias.html">Sugerencias</a></li>
+                    <li><a href="acerca-de.html">Acerca de nosotros</a></li>
                 </ul>
                 <ul class="actions vertical">
                     <li><a href="#" class="button special fit">Administrar</a></li>
@@ -99,6 +99,7 @@
         <footer id="footer" >
             <div class="inner">
                 <ul class="icons">
+                    <!---->
                     <li><a href="https://twitter.com/ucadenicaragua" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="https://www.facebook.com/isiUCA/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
                     <!--<li><a href="https://www.instagram.com/farmaciaweb" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>-->

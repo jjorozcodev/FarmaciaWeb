@@ -20,6 +20,7 @@
             <header id="header" class="alt">
                 <a href="index.php" class="logo"><strong>Farmacia Web</strong> <span>by JAB</span></a>
                 <nav>
+                    <input id="agregar" type="button" value="Nuevo" class="button special" />
                     <a href="#menu">Menú</a>
                 </nav>
             </header>
@@ -28,7 +29,7 @@
             <nav id="menu">
                 <ul class="links">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="sugerencias.html">Sugerencias</a></li>
+                    <li><a href="acerca-de.html">Acerca de nosotros</a></li>
                 </ul>
                 <ul class="actions vertical">
                     <li><a href="#" class="button special fit">Administrar</a></li>
@@ -36,14 +37,27 @@
                 </ul>
             </nav>
 
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+            <section id="banner">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Lista de Medicamentos</h1>
+                    </header>
+                    <div class="content">
+                        <p>Administrar medicamentos aqui.</p>
+                        <ul class="actions">
+                            <li><a href="#one" class="button next scrolly">Continuar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
         <!-- Main -->
         <div id="main">
             <!-- One -->
             <section id="one">
                 <div>
-                    <h1>Listado de Medicamentos</h1>
-                    <input id="agregar" type="button" value="Nuevo" class="button special" />
-                    
                     <!-- Tabla -->
                     <div class="input-group"> <span class="input-group-addon"><b>Buscar:</b></span>
                             <input autofocus id="criterio" type="text" class="form-control" placeholder="Ingrese texto para la búsqueda...">

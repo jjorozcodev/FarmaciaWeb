@@ -20,6 +20,7 @@
             <header id="header" class="alt">
                 <a href="index.php" class="logo"><strong>Farmacia Web</strong> <span>by JAB</span></a>
                 <nav>
+                    <input id="agregar" type="button" value="Nuevo" class="button special" />
                     <a href="#menu">Menú</a>
                 </nav>
             </header>
@@ -28,53 +29,69 @@
             <nav id="menu">
                 <ul class="links">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="sugerencias.html">Sugerencias</a></li>
+                    <li><a href="acerca-de.html">Acerca de nosotros</a></li>
                 </ul>
                 <ul class="actions vertical">
                     <li><a href="#" class="button special fit">Administrar</a></li>
                     <li><a href="#" class="button fit">Ingresar</a></li>
                 </ul>
             </nav>
+   
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+            <section id="banner">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Lista de Proveedores</h1>
+                    </header>
+                    <div class="content">
+                        <p>Administrar proveedores aqui.</p>
+                        <ul class="actions">
+                            <li><a href="#one" class="button next scrolly">Continuar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        
 
         <!-- Main -->
         <div id="main">
             <!-- One -->
             <section id="one">
                 <div>
-                    <h1>Listado de Proveedores</h1>
-                    <input id="agregar" type="button" value="Nuevo" class="button special" />
-                    
                     <!-- Tabla -->
                     <div class="input-group"> <span class="input-group-addon"><b>Buscar:</b></span>
                             <input autofocus id="criterio" type="text" class="form-control" placeholder="Ingrese texto para la búsqueda...">
                     </div>
                     <hr>
-                    <table class="table-wrapper">
-                        <thead>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>COD</th>
+                                    <th>PROVEEDOR</th>
+                                    <th>TELEFONO</th>
+                                    <th>DIRECCION</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             <tr>
-                                <th>COD</th>
-                                <th>PROVEEDOR</th>
-                                <th>TELEFONO</th>
-                                <th>DIRECCION</th>
-                                <th>ACCIONES</th>
-                            </tr>
-                        </thead>
-                        <tbody class="contenidoTabla">
-                        <tr>
-                        <?php foreach($allProveedores as $proveedor) { ?>
-                            <?php echo "<tr>" ?>
-                                <?php echo "<td>".$proveedor->idProveedor."</td>" ?>
-                                <?php echo "<td>".$proveedor->Proveedor."</td>" ?>
-                                <?php echo "<td>".$proveedor->Telefono."</td>" ?>
-                                <?php echo "<td>".$proveedor->Direccion."</td>" ?>
-                                <td>
-                                    <input type="button" value="Editar" class="button special small edicion" onclick="mostrarModalEditar(<?php echo $proveedor->idProveedor; ?>, '<?php echo $proveedor->Proveedor; ?>', '<?php echo $proveedor->Telefono; ?>', '<?php echo $proveedor->Direccion; ?>')" /> 
-                                    <a class="btn button small" href="<?php echo $helper->url("Proveedor","borrar"); ?>&idProveedor=<?php echo $proveedor->idProveedor; ?>">Borrar</a>
-                                </td>                     
-                            <?php echo "</tr>" ?>
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                            <?php foreach($allProveedores as $proveedor) { ?>
+                                <?php echo "<tr>" ?>
+                                    <?php echo "<td>".$proveedor->idProveedor."</td>" ?>
+                                    <?php echo "<td>".$proveedor->Proveedor."</td>" ?>
+                                    <?php echo "<td>".$proveedor->Telefono."</td>" ?>
+                                    <?php echo "<td>".$proveedor->Direccion."</td>" ?>
+                                    <td>
+                                        <input type="button" value="Editar" class="button special small edicion" onclick="mostrarModalEditar(<?php echo $proveedor->idProveedor; ?>, '<?php echo $proveedor->Proveedor; ?>', '<?php echo $proveedor->Telefono; ?>', '<?php echo $proveedor->Direccion; ?>')" /> 
+                                        <a class="btn button small" href="<?php echo $helper->url("Proveedor","borrar"); ?>&idProveedor=<?php echo $proveedor->idProveedor; ?>">Borrar</a>
+                                    </td>                     
+                                <?php echo "</tr>" ?>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>    
         </div>
