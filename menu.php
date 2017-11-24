@@ -99,18 +99,17 @@
         <footer id="footer" >
             <div class="inner">
                 <ul class="icons">
-                    <!--<li><a href="https://www.twitter.com/farmaciaweb" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>-->
-                    <li><a href="https://www.facebook.com/JJ.OrozcoLopez.13" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://twitter.com/ucadenicaragua" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.facebook.com/isiUCA/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
                     <!--<li><a href="https://www.instagram.com/farmaciaweb" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>-->
                     <li><a href="https://github.com/soy-jj/farmaciaweb" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                    <!--<li><a href="https://www.github.com/farmaciaweb" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+                    <li><a href="https://www.facebook.com/FCTyA.UCA/" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
                 </ul>
                 <ul class="copyright">
                     <li>Todos los derechos reservados &copy UCA 2017</li><li>Design: <a href="http://www.uca.edu.ni"><b>Equipo Jiren</b></a></li>
                 </ul>
             </div>
         </footer>
-
     </div>
 
         <!-- Scripts -->
