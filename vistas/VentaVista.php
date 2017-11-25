@@ -63,34 +63,7 @@
                             <input autofocus id="criterio" type="text" class="form-control" placeholder="Ingrese texto para la búsqueda...">
                     </div>
                     <hr>
-                    <table class="table-wrapper">
-                        <thead>
-                            <tr>
-                                <th>COD</th>
-                                <th>MEDICAMENTO</th>
-                                <th>PRESENTACION</th>
-                                <th>EXISTENCIAS</th>
-                                <th>PRECIO C$</th>
-                            </tr>
-                        </thead>
-                        <tbody class="contenidoTabla">
-                        <tr>
-                        <?php foreach($allMedicamentos as $medicamento) { ?>
-                            <?php echo "<tr>" ?>
-                                <?php echo "<td>".$medicamento->idMedicamento."</td>" ?>
-                                <?php echo "<td>".$medicamento->Medicamento."</td>" ?>
-                                <?php echo "<td>".$medicamento->Presentacion."</td>" ?>
-                                <?php echo "<td>".$medicamento->Existencias."</td>" ?>
-                                <?php echo "<td>".$medicamento->Precio."</td>" ?>
-                                <td>
-                                <input type="button" value="Editar" class="button special small edicion" onclick="mostrarModalEditar(<?php echo $medicamento->idMedicamento; ?>, '<?php echo $medicamento->Medicamento; ?>', '<?php echo $medicamento->Presentacion; ?>', '<?php echo $medicamento->Existencias; ?>', '<?php echo $medicamento->Precio; ?>')" /> 
-                                    <a class="btn button small" href="<?php echo $helper->url("Medicamento","borrar"); ?>&idMedicamento=<?php echo $medicamento->idMedicamento; ?>">Borrar</a>
-                                </td>                     
-                            <?php echo "</tr>" ?>
-                        <?php } ?>
-
-                        </tbody>
-                    </table>
+          <?php include("Agregar_factura.php");?>
                 </div>
             </section>    
         </div>
@@ -117,15 +90,15 @@
         <div id="modalAgregar" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-            <h2>Registrar Medicamento</h2>
+            <h2>Registrar Venta</h2>
             </div>
             <div class="modal-body">
                 <!--Creacion de formulario-->
-                <form action="<?php echo $helper->url("Medicamento", "registrar");  ?>" method="post" class="col-lg-5">
+                <form action="<?php echo $helper->url("Venta", "registrar");  ?>" method="post" class="col-lg-5">
+                    Fecha: <input type="text" name="fecha" class="form-control"/>
                     Medicamento: <input type="text" name="medicamento" class="form-control"/>
-                    Presentación: <input type="text" name="presentacion" class="form-control"/>
-                    Existencias: <input type="text" name="existencias" class="form-control"/>
                     Precio (C$): <input type="text" name="precio" class="form-control"/>
+                    Cantidad: <input type="text" name="cantidad" class="form-control"/>                    
                     <br>        
                     <input type="submit" value="Agregar" class="button special small"/>
                     <input id="cerrarAgregar" type="button" value="Cancelar" class="button small close"/>

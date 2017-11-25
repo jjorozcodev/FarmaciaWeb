@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 class ProveedorControlador extends ControladorBase{
     public function __construct(){
