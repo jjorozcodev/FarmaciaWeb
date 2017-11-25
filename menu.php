@@ -31,10 +31,10 @@
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="acerca-de.html">Acerca de nosotros</a></li>
                 </ul>
-                <ul class="actions vertical">
+                <!--<ul class="actions vertical">
                     <li><a href="#" class="button special fit">Administrar</a></li>
                     <li><a href="#" class="button fit">Ingresar</a></li>
-                </ul>
+                </ul>-->
             </nav>
 
         <!-- Banner -->
@@ -107,7 +107,7 @@
                     <li><a href="https://www.facebook.com/FCTyA.UCA/" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
                 </ul>
                 <ul class="copyright">
-                    <li>Todos los derechos reservados &copy UCA 2017</li><li>Design: <a href="http://www.uca.edu.ni"><b>Equipo Jiren</b></a></li>
+                    <li>Todos los derechos reservados &copy UCA 2017</li><li>Design: <a href="http://www.uca.edu.ni"><b>by JAB</b></a></li>
                 </ul>
             </div>
         </footer>

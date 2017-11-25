@@ -20,6 +20,9 @@
             <header id="header" class="alt">
                 <a href="index.php" class="logo"><strong>Farmacia Web</strong> <span>by JAB</span></a>
                 <nav>
+                    <div class="input-group">
+                        <input autofocus id="criterio" type="text" class="form-control" placeholder="Buscar">
+                    </div>
                     <input id="agregar" type="button" value="Nuevo" class="button special" />
                     <a href="#menu">Menú</a>
                 </nav>
@@ -31,41 +34,36 @@
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="acerca-de.html">Acerca de nosotros</a></li>
                 </ul>
-                <ul class="actions vertical">
+                <!--<ul class="actions vertical">
                     <li><a href="#" class="button special fit">Administrar</a></li>
                     <li><a href="#" class="button fit">Ingresar</a></li>
-                </ul>
+                </ul>-->
             </nav>
    
         <!-- Banner -->
         <!-- Note: The "styleN" class below should match that of the header element. -->
-            <section id="banner">
-                <div class="inner">
-                    <header class="major">
-                        <h1>Lista de Proveedores</h1>
-                    </header>
-                    <div class="content">
-                        <p>Administrar proveedores aqui.</p>
-                        <ul class="actions">
-                            <li><a href="#one" class="button next scrolly">Continuar</a></li>
-                        </ul>
-                    </div>
+        <section id="banner" class="style4">
+            <div class="inner">
+                <header class="major">
+                    <h1>Lista de Proveedores</h1>
+                </header>
+                <div class="content">
+                    <p>Administrar proveedores aqui.</p>
+                    <ul class="actions">
+                        <li><a href="#one" class="button next scrolly">Continuar</a></li>
+                    </ul>
                 </div>
-            </section>
+            </div>
+        </section>
         
-
         <!-- Main -->
         <div id="main">
             <!-- One -->
             <section id="one">
                 <div>
                     <!-- Tabla -->
-                    <div class="input-group"> <span class="input-group-addon"><b>Buscar:</b></span>
-                            <input autofocus id="criterio" type="text" class="form-control" placeholder="Ingrese texto para la búsqueda...">
-                    </div>
-                    <hr>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="tablaContenido">
                             <thead>
                                 <tr>
                                     <th>COD</th>
@@ -75,7 +73,7 @@
                                     <th>ACCIONES</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="contenidoTabla">
                             <tr>
                             <?php foreach($allProveedores as $proveedor) { ?>
                                 <?php echo "<tr>" ?>
