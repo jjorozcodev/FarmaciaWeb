@@ -5,9 +5,8 @@ class Venta extends EntidadBase
 {
     private $idVenta;
     private $fecha;
-    private $medicamento;
+    private $idMedicamento;
     private $cantidad;
-    private $precio;
 
     public function __construct() {
         $tb = "ventas";
@@ -25,9 +24,9 @@ class Venta extends EntidadBase
         return $this->fecha;
     }
 
-    public function getMedicamento()
+    public function getIdMedicamento()
     {
-        return $this->medicamento;
+        return $this->idMedicamento;
     }
 
     public function getCantidad()
@@ -35,10 +34,6 @@ class Venta extends EntidadBase
         return $this->cantidad;
     }
 
-    public function getPrecio()
-    {
-        return $this->precio;
-    }
     //set
 
     public function setIdVenta($value)
@@ -50,9 +45,9 @@ class Venta extends EntidadBase
         $this->fecha = $value;
     }
 
-    public function setMedicamento($value)
+    public function setIdMedicamento($value)
     {
-        $this->medicamento = $value;
+        $this->idMedicamento = $value;
     }
 
     public function setCantidad($value)
@@ -60,18 +55,17 @@ class Venta extends EntidadBase
         $this->cantidad = $value;
     }
 
-    public function setPrecio($value)
-    {
-        $this->precio = $value;
-    }
     public function guardar(){
-        $query="INSERT INTO ventas (idVenta,Fecha, Medicamento,Cantidad,Precio)
+        $query="INSERT INTO ventas (idVenta, Fecha, idMedicamento, cantidad)
                 VALUES (NULL,
-                        '".$this->fecha."',
-                        '".$this->medicamento."' ,
-                        '".$this->cantidad."' ,
-                        '".$this->precio."');";
+                        '".$this->fecha."' ,
+                        '".$this->idMedicamento."' ,
+                        '".$this->cantidad."');";
         $guardado = $this->bd()->query($query);
+
+        $sqlUpdate = "UPDATE medicamentos SET Existencias = Existencias - ".$this->cantidad." WHERE idMedicamento=".$this->idMedicamento.";";
+
+        $this->bd()->query($sqlUpdate);
         return $guardado;
     }
 
@@ -80,5 +74,16 @@ class Venta extends EntidadBase
         $borrado=$this->bd()->query($query);
         return $borrado;
     }
+
+    public function listar(){
+        $query=$this->bd()->query("SELECT ventas.idVenta, ventas.Fecha, medicamentos.Medicamento, medicamentos.Precio, ventas.cantidad FROM ventas inner join medicamentos on ventas.idMedicamento = medicamentos.idMedicamento;");
+        $resultSet=array();
+        while($row=$query->fetch_object()){
+            $resultSet[]=$row;   
+        }
+        
+        return $resultSet;
+    }
+
 }
 ?>

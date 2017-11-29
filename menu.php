@@ -71,7 +71,7 @@
                                 <img src="images/pic04.jpg" alt="" />
                             </span>
                             <header class="major">
-                                <h3><a href="index.php?controller=venta&action=index" class="link">Ventas</a></h3>
+                                <h3><a href="index.php?controller=Venta&action=index" class="link">Ventas</a></h3>
                                 <p>Facturar</p>
                             </header>
                         </article>

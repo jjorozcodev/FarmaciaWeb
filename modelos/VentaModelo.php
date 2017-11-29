@@ -1,5 +1,5 @@
 <?php
-    class VentaModelo extends ModeloBase{
+    class VentasModelo extends ModeloBase{
         private $tabla;
 
         public function __construct(){
@@ -9,7 +9,7 @@
 
         //Metodos de consulta
         public function getVenta(){
-            $query="SELECT * FROM ventas";
+            $query="SELECT * FROM ventas WHERE idVenta=1";
             $prov=$this->ejecutarSql($query);
             return $prov;
         }

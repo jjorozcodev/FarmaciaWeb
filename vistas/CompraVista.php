@@ -6,22 +6,27 @@ if($conexion->connect_errno)
     exit();
 }
 $sql = "SELECT  * FROM medicamentos";
+$sql1 = "SELECT  * FROM proveedores";
 
 $resultado = $conexion->query($sql);
+$resultado2 = $conexion->query($sql1);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Farmacia Web | Ventas</title>
+    <title>Farmacia Web | Compras</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="recursos/css/main.css">
     
     <!-- JavaScripts -->
     <script src="recursos/js/jquery-3.2.1.min.js"></script>
+   
 </head>
 <body>
 
@@ -53,10 +58,10 @@ $resultado = $conexion->query($sql);
             <section id="banner">
                 <div class="inner">
                     <header class="major">
-                        <h1>Ventas</h1>
+                        <h1>Compras</h1>
                     </header>
                     <div class="content">
-                        <p>Registre aquí sus ventas.</p>
+                        <p>Registre las ventas realizadas.</p>
                         <ul class="actions">
                             <li><a href="#one" class="button next scrolly">Continuar</a></li>
                         </ul>
@@ -79,8 +84,9 @@ $resultado = $conexion->query($sql);
                         <table class="tablaContenido">
                             <thead>
                                 <tr>
-                                    <th>NUM VENTA</th>
+                                    <th>NUM COMPRA</th>
                                     <th>FECHA</th>
+                                    <th>PROVEEDOR</th>
                                     <th>MEDICAMENTO</th>
                                     <th>PRECIO</th>
                                     <th>CANTIDAD</th>
@@ -89,16 +95,17 @@ $resultado = $conexion->query($sql);
                             </thead>
                             <tbody class="contenidoTabla">
                             <tr>
-                            <?php foreach($allVentas as $venta) { ?>
+                            <?php foreach($allCompras as $compra) { ?>
                                 <?php echo "<tr>" ?>
-                                    <?php echo "<td>".$venta->idVenta."</td>" ?>
-                                    <?php echo "<td>".$venta->Fecha."</td>" ?>
-                                    <?php echo "<td>".$venta->Medicamento."</td>" ?>
-                                    <?php echo "<td> C$".$venta->Precio."</td>" ?>
-                                    <?php echo "<td>".$venta->cantidad."</td>" ?>
-                                    <?php echo "<td> C$".$venta->Precio*$venta->cantidad."</td>" ?>
+                                    <?php echo "<td>".$compra->idCompra."</td>" ?>
+                                    <?php echo "<td>".$compra->Fecha."</td>" ?>
+                                    <?php echo "<td>".$compra->Proveedor."</td>" ?>
+                                    <?php echo "<td>".$compra->Medicamento."</td>" ?>
+                                    <?php echo "<td> C$".$compra->Precio."</td>" ?>
+                                    <?php echo "<td>".$compra->cantidad."</td>" ?>
+                                    <?php echo "<td> C$".$compra->Precio*$compra->cantidad."</td>" ?>
                                     <td>
-                                        <a class="btn button small" href="<?php echo $helper->url("Venta","borrar"); ?>&idVenta=<?php echo $venta->idVenta; ?>">Borrar</a>
+                                        <a class="btn button small" href="<?php echo $helper->url("Compra","borrar"); ?>&idCompra=<?php echo $compra->idCompra; ?>">Borrar</a>
                                     </td>                     
                                 <?php echo "</tr>" ?>
                             <?php } ?>
@@ -131,12 +138,20 @@ $resultado = $conexion->query($sql);
         <div id="modalAgregar" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-            <h2>Registrar Venta</h2>
+            <h2>Registrar Compra</h2>
             </div>
             <div class="modal-body">
                 <!--Creacion de formulario-->
-                <form action="<?php echo $helper->url("Venta", "registrar");  ?>" method="post" class="col-lg-5">
-                Seleccione un Medicamento
+                <form action="<?php echo $helper->url("Compra", "registrar");  ?>" method="post" class="col-lg-5">
+                    <p>Fecha: <input type="text" name="fecha" class="form-control selector" id="datepicker"/></p>
+                   
+                    Proveedor: 
+                    <select style="color:black" name="idProveedor">              
+                        <?php while($datos=$resultado2->fetch_array()) { ?>
+                                <option value=<?php echo $datos['idProveedor'] ?>><?php echo $datos['Proveedor'] ?></option>
+                        <?php } ?>     
+                    </select>
+                    Medicamento: 
                     <select style="color:black" name="idMedicamento">              
                         <?php while($datos=$resultado->fetch_array()) { ?>
                                 <option value=<?php echo $datos['idMedicamento'] ?>><?php echo $datos['Medicamento'] ?></option>
@@ -151,7 +166,7 @@ $resultado = $conexion->query($sql);
            
         </div>
     </div>
- 
+    
 
         <!-- SCRIPTS -->
         <script src="recursos/js/funciones.js"></script>
@@ -162,7 +177,20 @@ $resultado = $conexion->query($sql);
         <script src="recursos/js/skel.min.js"></script>
         <script src="recursos/js/util.js"></script>
         <script src="recursos/js/main.js"></script>
-     
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+  $( ".selector" ).datepicker({
+    dateFormat:"yy/mm/dd"      
+  });
+  </script>
+       
 </body>
 </html>
-

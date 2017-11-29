@@ -121,7 +121,13 @@
                 <!--Creacion de formulario-->
                 <form action="<?php echo $helper->url("Medicamento", "registrar");  ?>" method="post" class="col-lg-5">
                     Medicamento: <input type="text" name="medicamento" class="form-control"/>
-                    Presentación: <input type="text" name="presentacion" class="form-control"/>
+                    Presentación:
+                    <select  name="presentacion" style="color:black">
+                    <option>Pastilla</option>
+                    <option>Jarabe</option>
+                    <option>Inyeccion</option>
+                    <option>Pomada</option>
+                    </select>
                     Existencias: <input type="text" name="existencias" class="form-control"/>
                     Precio (C$): <input type="text" name="precio" class="form-control"/>
                     <br>        

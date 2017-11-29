@@ -6,8 +6,14 @@ class Compra extends EntidadBase
     private $idCompra;
     private $fecha;
     private $idProveedor;
-    public $compras = array();
+    private $idMedicamento;
+    private $cantidad;
 
+    public function __construct() {
+        $tb = "compras";
+        parent::__construct($tb);
+    }
+    
     //get
     public function getIdCompra()
     {
@@ -18,12 +24,22 @@ class Compra extends EntidadBase
     {
         return $this->fecha;
     }
-    
+
     public function getIdProveedor()
     {
         return $this->idProveedor;
     }
-    
+
+    public function getIdMedicamento()
+    {
+        return $this->idMedicamento;
+    }
+
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
     //set
 
     public function setIdCompra($value)
@@ -34,27 +50,37 @@ class Compra extends EntidadBase
     {
         $this->fecha = $value;
     }
-    public function setIdProveedor($value){
+
+    public function setIdProveedor($value)
+    {
         $this->idProveedor = $value;
     }
 
-    // Constructor
-    // Al crearse también recupera los datos del detalle
-    public function __construct() {
-        $tbC = "compras";
-        parent::__construct($tbC);
-        $detalleCompras= new detalle("detallecompra");
-        
-        $this->$compras = $detalleCompras->getTodo();
+    public function setIdMedicamento($value)
+    {
+        $this->idMedicamento = $value;
     }
 
-    //Método Para guardar un Compra
+    public function setCantidad($value)
+    {
+        $this->cantidad = $value;
+    }
+
     public function guardar(){
-        $query="INSERT INTO compras (idCompra, Fecha, idProveedor)
+        $query="INSERT INTO compras (idCompra, Fecha, idProveedor, idMedicamento, cantidad)
                 VALUES (NULL,
                         '".$this->fecha."' ,
-                        '".$this->idProveedor."');";
+                        '".$this->idProveedor."' ,
+                        '".$this->idMedicamento."' ,
+                        '".$this->cantidad."');";
         $guardado = $this->bd()->query($query);
+
+
+        
+        $sqlUpdate = "UPDATE medicamentos SET Existencias = Existencias + ".$this->cantidad." WHERE idMedicamento=".$this->idMedicamento.";";
+        
+        $this->bd()->query($sqlUpdate);
+
         return $guardado;
     }
 
@@ -64,10 +90,15 @@ class Compra extends EntidadBase
         return $borrado;
     }
 
-    private function guardarDetalle(){
-        $detalleCompras = new detalle("detallecompra");
-        $detalleCompras->guardarItems("detallecompra", $compras, $this->idCompra);
+    public function listar(){
+        $query=$this->bd()->query("SELECT compras.idCompra, compras.Fecha, proveedores.Proveedor, medicamentos.Medicamento, medicamentos.Precio, compras.cantidad 
+        FROM compras inner join proveedores on proveedores.idProveedor = compras.idProveedor 	inner join medicamentos on compras.idMedicamento = medicamentos.idMedicamento;");
+        $resultSet=array();
+        while($row=$query->fetch_object()){
+            $resultSet[]=$row;   
+        }
+        
+        return $resultSet;
     }
-
 }
 ?>
